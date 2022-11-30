@@ -1,0 +1,17 @@
+CCCCCCCCCCOS(=O)(=O)NC(=O)Nc1c(C(C)C)cccc1C(C)C
+CCCCCCNS(=O)(=O)NC(=O)Oc1c(C(C)C)cccc1C(C)C
+CCCCCCCCCCCCOS(=O)(=O)NC(=O)Oc1c(C(C)C)cccc1C(C)C
+CCCCCCCCCCCCOC(=O)NS(=O)(=O)Oc1c(C(C)C)cccc1C(C)C
+CC(C)c1cccc(C(C)C)c1NC(=O)NS(=O)(=O)N1CCCC1
+CCCCCN(CCCCC)S(=O)(=O)NC(=O)Oc1c(C(C)(C)C)cc(C)cc1C(C)(C)C
+Cc1cc(C(C)(C)C)c(OC(=O)NS(=O)(=O)N(CCCN(C)C)CCCN(C)C)c(C(C)(C)C)c1
+Cc1cc(C(C)(C)C)c(OC(=O)NS(=O)(=O)Oc2c(C(C)C)cccc2C(C)C)c(C(C)(C)C)c1
+CCCCCCCCCCN(CCCCCCCCCC)S(=O)(=O)NC(=O)Nc1c(C(C)C)cccc1C(C)C
+CC(C)(C)c1cccc(C(C)(C)C)c1OC(=O)NS(=O)(=O)NC(c1ccccc1)c1ccccc1
+CCCCN(CCCC)S(=O)(=O)NC(=O)Oc1c(C(C)(C)C)cc(C)cc1C(C)(C)C
+CC(C)c1cccc(C(C)C)c1OC(=O)NS(=O)(=O)Oc1c(C(C)C)cccc1C(C)C
+CC(C)c1cc(C(C)C)c(OC(=O)NS(=O)(=O)Oc2c(C(C)C)cc(C(C)C)cc2C(C)C)c(C(C)C)c1
+CC(C)c1cccc(C(C)C)c1OS(=O)(=O)NC(=O)OC1CCCCC1
+CCCCN(CCCC)S(=O)(=O)NC(=O)Nc1c(C(C)C)cccc1C(C)C
+CCCCCCNS(=O)(=O)NC(=O)Oc1c(C(C)(C)C)cc(C)cc1C(C)(C)C
+CCCCCCCCCCCCOC(=O)NS(=O)(=O)Nc1c(C(C)C)cccc1C(C)C
