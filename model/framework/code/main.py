@@ -49,10 +49,10 @@ df.to_csv(
     index=False,
     header=True,
 )
-cmd1 = "python {0}/fs_mol/preprocessing/featurize.py {0}/fs_mol/preprocessing/chembl datasets/fs-mol/test".format(
-    root, root )
-cmd2 = "python {0}/fs_mol/protonet_test.py fs-mol-checkpoints/PN-Support64_best_validation.pt  {0}/datasets/fs-mol".format(
-    root, root )
+cmd1 = "python {0}/fs_mol/preprocessing/featurize.py {0}/fs_mol/preprocessing/chembl {0}/datasets/fs-mol/test".format(
+    root, root, root )
+cmd2 = "python {0}/fs_mol/protonet_test.py {0}/fs-mol-checkpoints/PN-Support64_best_validation.pt  {0}/datasets/fs-mol".format(
+    root, root, root )
 
 def run_command(cmd, quiet=None):
     if quiet is None:
