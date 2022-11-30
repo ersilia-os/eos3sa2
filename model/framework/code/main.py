@@ -3,6 +3,8 @@ import csv
 import os
 import sys
 import subprocess
+import tempfile
+import shutil
 
 # parse arguments
 input_file = sys.argv[1]
@@ -10,16 +12,12 @@ output_file = sys.argv[2]
 
 
 input_smiles_list = pd.read_csv(input_file, sep="\n", header=None)[0].tolist()
-
+input_smiles_list = input_smiles_list[1:]
 input_smiles = ["CCCCCCCCCC" for i in range(16)]
 
 
 input_smiles.extend(input_smiles_list)
-print(input_smiles)
-print(len(input_smiles))
-
 number_input = len(input_smiles)
-
 
 activity_list = ["1.0" for i in range(number_input)]
 activity_list[0:8] = ["0.0" for i in range(8)]
@@ -28,7 +26,6 @@ std_value_list = ["0.0" for i in range(number_input)]
 log_std_value_list = ["1.0" for i in range(number_input)]
 std_relation_list = ["=" for i in range(number_input)]
 assay_type_list = ["B" for i in range(number_input)]
-
 
 data = {
     "smiles": input_smiles,
@@ -52,20 +49,10 @@ df.to_csv(
     index=False,
     header=True,
 )
-
-# print message
-print("Data appended successfully.")
-
 cmd1 = "python {0}/fs_mol/preprocessing/featurize.py {0}/fs_mol/preprocessing/chembl datasets/fs-mol/test".format(
-    root, root
-)
+    root, root )
 cmd2 = "python {0}/fs_mol/protonet_test.py fs-mol-checkpoints/PN-Support64_best_validation.pt  {0}/datasets/fs-mol".format(
-    root, root
-)
-
-import tempfile
-import shutil
-
+    root, root )
 
 def run_command(cmd, quiet=None):
     if quiet is None:
@@ -89,7 +76,6 @@ def run_command(cmd, quiet=None):
         else:
             subprocess.check_call(cmd, env=os.environ)
 
-
 def run_command_check_output(cmd):
     if type(cmd) is str:
         assert ">" not in cmd
@@ -106,7 +92,6 @@ def run_command_check_output(cmd):
         result = subprocess.run(cmd, stdout=subprocess.PIPE, env=os.environ)
         return result.stdout
 
-
 def conda_prefix(is_base):
     o = run_command_check_output("which conda").rstrip()
     if o:
@@ -119,10 +104,7 @@ def conda_prefix(is_base):
         o = run_command_check_output("echo $CONDA_PREFIX_1").rstrip()
         return o
 
-
 BASE = "base"
-
-
 def activate_base():
     snippet = """
 	source {0}/etc/profile.d/conda.sh
@@ -137,7 +119,7 @@ def run_commandlines_in_conda(commandlines):
     """
 	Run commands in a given conda environment.
 	"""
-    environment = "fsmol"  # TODO: Update with eos identifier
+    environment = "eos3sa2"  
     tmp_folder = tempfile.mkdtemp(prefix="ersilia-")
     tmp_script = os.path.join(tmp_folder, "script.sh")
     bash_script = activate_base()
@@ -161,13 +143,8 @@ def run_commandlines_in_conda(commandlines):
 
 run_commandlines_in_conda(cmd1)
 run_commandlines_in_conda(cmd2)
-
 embeddings = list(csv.reader(open(os.path.join(root, "embeddings.csv"))))
-
-output_smiles = pd.read_csv(os.path.join(root, "output.txt"), sep="\n", header=None)[
-    0
-].tolist()
-
+output_smiles = pd.read_csv(os.path.join(root, "output.txt"), sep="\n", header=None)[0].tolist()
 output_list = []
 for s in input_smiles:
     row = [s]
