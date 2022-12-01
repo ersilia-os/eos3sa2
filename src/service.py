@@ -88,7 +88,7 @@ class Model(object):
             h = next(reader)[1:]
             R = []
             for r in reader:
-                R += [{"outcome": [Float(x) for x in r[1:]}] # <-- EDIT: Modify according to type of output (Float, String...)
+                R += [{"outcome": [Float(x) for x in r[1:]]}] # <-- EDIT: Modify according to type of output (Float, String...)
         meta = {
             "outcome": h
         }
