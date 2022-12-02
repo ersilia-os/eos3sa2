@@ -1,3 +1,5 @@
+import sys
+print(sys.executable)
 import pandas as pd
 import csv
 import os
