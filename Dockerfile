@@ -10,7 +10,7 @@ RUN pip install py-repo-root
 RUN pip install pyprojroot
 RUN pip install more-itertools
 RUN pip install torch-scatter
-RUN pip install sqalchemy==1.3.24
+RUN pip install sqlalchemy==1.3.24
 
 
 WORKDIR /repo
