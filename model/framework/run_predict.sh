@@ -1,1 +1,2 @@
-python $1/code/main.py $2 $3
+ABSOLUTE_PATH=$(pwd)
+cd $1/code; python main.py $ABSOLUTE_PATH/$2 $ABSOLUTE_PATH/$3; cd ..
