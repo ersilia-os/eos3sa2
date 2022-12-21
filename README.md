@@ -1,26 +1,26 @@
-# Model title
+# ProtoNet pre-trained network embedding based on the FS-Mol dataset for few-shot learning
 
 ## Model identifiers
-- Slug: <add_slug_here>
-- Ersilia ID: <add_ersilia_id_here>
-- Tags: <add_tags_here>
+- Slug: fs-mol-protonet
+- Ersilia ID: eos3sa2
+- Tags: Embedding, Few-shot
 
 ## Model description
 
-Short description of the model in one or two sentences
+This model provides a 512-dimensional embedding based on the last distance layer of the Prototypical Network (ProtoNet). The pre-trained model is provided by FS-Mol, a dataset for few-shot learning
 
-- Input:
-- Output: {unit and description of output) 
-- Model type: (Regression or Classification)
-- Training set: (number of compounds and link to the training data)
-- Mode of training: (is it pretrained? that is were the checkpoints downloaded and used to train the model? or is it retrained? that is trained from scratch with an updated data)
+- Input: COMPOUND (Single SMILES string)
+- Output: Descriptor (The output is a 512-dimensional embedding that can be used for distance calculation or as an input for machine learning predictions)
+- Model type: Classification
+- Training set: ChEMBL27 (233786 training samples)
+- Mode of training: Pre-trained
 
 ## Source code
 
-Cite the source publication
+Stanley, M., Bronskill, J., Maziarz, K., Misztela, H., Lanini, J., Segler, M., … Brockschmidt, M. (2021, December). FS-Mol: A Few-Shot Learning Dataset of Molecules. NeurIPS 2021. Retrieved from https://www.microsoft.com/en-us/research/publication/fs-mol-a-few-shot-learning-dataset-of-molecules/
 
-- Code: include link to the source code
-- Checkpoints: include the link to the checkpoints used if model is a pretrained model
+- Code: https://github.com/microsoft/FS-Mol
+- Checkpoints: https://figshare.com/ndownloader/files/31307479
 
 ## License
 
@@ -28,8 +28,8 @@ State the licences used which are GPL v3 license used by Ersilia and the license
 
 ## History
 
-- State the date when the model was downloaded and incorporated into Ersilia.
-- List any essential steps/modifications to the original code
+- In progress
+- Modified the code to extract 512-dimensional embedding based on the last distance layer of the Prototypical Network (ProtoNet).
 
 ## About us
 
